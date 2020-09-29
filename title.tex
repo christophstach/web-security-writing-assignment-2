@@ -1,0 +1,46 @@
+\newcommand*{\gradeType}[1]{\gdef\thegradetype{#1}}
+\newcommand*{\firstExaminer}[1]{\gdef\thefirstexaminer{#1}}
+\newcommand*{\secondExaminer}[1]{\gdef\thesecondexaminer{#1}}
+\newcommand*{\matrikelnr}[1]{\gdef\thematrikelnr{#1}}
+\newcommand*{\submitDate}[1]{\gdef\thesubmitdate{#1}}
+
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist
+
+\renewcommand*{\maketitle}{
+	\begin{titlepage}
+		\begin{changemargin}{-0.5cm}{0.0cm}
+		\begin{figure}[H]
+			\centering
+			% \includegraphics[width=0.5\textwidth]{resources/title/Q01_HTW_Berlin_Logo_quer_pos_FARBIG_CMYK.eps}
+		\end{figure}
+		\begin{center}
+			\vfill
+			{\Large \thetitle\par}
+			\vskip 0.5cm
+			{\large \bfseries Hausaufgabe 1\par}
+			\vskip 0.5cm
+			{\large zur Erlangung des akademischen Grades\vskip 0.5cm \bfseries \thegradetype}
+			\vskip 0.5cm
+			{\large an der}
+			\vskip 0.5cm
+			{\large Hochschule für Technik und Wirtschaft Berlin}
+			\vskip 0.0cm
+			{\large Fachbereich IV: Informatik, Kommunikation und Wirtschaft}
+			\vskip 0.0cm
+			{\large Studiengang: Angewandte Informatik}
+			\vfill
+			\begin{flushleft}
+				\begin{tabular}[t]{rl}
+					1. Prüfer:                  & \thefirstexaminer  \\
+					2. Prüfer:                  & \thesecondexaminer \\
+					\\
+					Eingereicht von:            & \theauthor \\
+					Immatrikulationsnummer:     & \thematrikelnr \\
+					Eingereicht am:             & \thesubmitdate
+				\end{tabular}
+			\end{flushleft}
+		\end{center}
+		\end{changemargin}
+	\end{titlepage}
+}

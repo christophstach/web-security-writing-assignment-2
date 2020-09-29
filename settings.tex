@@ -1,0 +1,53 @@
+\documentclass[chapterprefix=true, 11pt, a4paper, oneside, parskip=half, listof=totoc, bibliography=totoc, numbers=noendperiod]{scrbook}
+
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[bottom=32mm,left=25mm,right=25mm]{geometry}
+\usepackage[onehalfspacing]{setspace}
+\usepackage[stretch=10]{microtype}
+\usepackage{xcolor}
+\usepackage{titling}
+\usepackage{listings}
+\usepackage{minted}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[ngerman]{babel}
+\usepackage{csquotes}
+\usepackage[style=alphabetic, backend=biber, bibencoding=utf8, sorting=ynt]{biblatex}
+\usepackage[toc, acronym]{glossaries}
+\usepackage[onehalfspacing]{setspace}
+\usepackage[stretch=10]{microtype}
+\usepackage{imakeidx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[automark,headsepline]{scrlayer-scrpage}
+
+
+
+\addbibresource{references/images.bib}
+\addbibresource{references/online.bib}
+\addbibresource{references/repos.bib}
+\addbibresource{references/scientific.bib}
+
+\makenoidxglossaries
+
+\renewcommand{\lstlistlistingname}{Quellcodeverzeichnis}
+\renewcommand{\lstlistingname}{Code snippet}
+
+\setminted{xleftmargin=20pt,linenos,breaklines,fontsize=\footnotesize}
+
+\newglossarystyle{dottedlocations}{%
+	\glossarystyle{list}%
+	\renewcommand*{\glossaryentryfield}[5]{%
+		\item[\glsentryitem{##1}\glstarget{##1}{##2}] \emph{##3}%
+		\unskip\leaders\hbox to 2.9mm{\hss.}\hfill##5}%
+	\renewcommand*{\glsgroupskip}{}%
+}
+
+\loadglsentries{glossary.tex}
+
+\definecolor{danger}{RGB}{220, 53, 69}
+\newenvironment{longlisting}{\captionsetup{type=listing}}{}

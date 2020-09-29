@@ -1,0 +1,55 @@
+
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.aux": true,
+        "**/*.bbl": true,
+        "**/*.bcf": true,
+        "**/*.blg": true,
+        "**/*.fdb_latexmk": true,
+        "**/*.fls": true,
+        "**/*.lof": true,
+        "**/*.log": true,
+        "**/*.lol": true,
+        "**/*.run.xml": true,
+        "**/*.tks": true,
+        "**/*.toc": true,
+        "**/*.lot": true,
+        "**/*.out": true,
+        "**/*.synctex.gz": true,
+        "**/*.*~": true,
+        "_minted-main": true,
+    },
+    "latex-workshop.latex.autoBuild.run": "never",
+    "editor.wordWrap": "wordWrapColumn",
+    "actionButtons": {
+        "reloadButton": null,
+        "loadNpmCommands": false,
+        "commands": [
+            {
+                "name": "Build LaTeX",
+                "color": "#af9e00",
+                "command": "latexmk -pvc -pdf -shell-escape -synctex=1 main.tex",
+                "singleInstance": true,
+            },
+        ]
+    },
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext"
+    ],
+    "spellright.language": [
+        "de_DE",
+        "en_US"
+    ],
+    "spellright.ignoreFiles": [
+        "**/.gitignore",
+        "**/.spellignore",
+    ],
+    "spellright.recheckOnSave": true,
+}
