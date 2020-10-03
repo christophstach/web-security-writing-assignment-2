@@ -30,17 +30,29 @@
   \maketitle
 
   
-  \section{Question 1?}
+  \section{What are the differences between web services and previous technologies such as procedural and object-oriented systems?}
 
-    \lipsum[10]
+    In the past, more procedural and object-oriented systems were established. These systems are usually developed in one single programming language. Also, the systems were developed as one monolithic application \cite{monolitharchitecture}.\\
+    \\
+    Today's systems are often developed in an SOA context. This brings the advantage of having many small exchangeable units, in form of web services. These units can be developed and maintained by different programming teams independently. Each team can choose the programming language of its choice. Web services share a common interface to exchange data.\\
+    \\
+    Having a software architecture of small exchangeable units also brings the advantage of having a smaller impact on failure cases. With a monolithic application, the whole application will shutdown on critical errors. In contrast, having many web services, only a small part of the application would stop working.
     
-  \section{Question 2?}
+  \section{What kind of business-needs or environment in which web service is not a good choice in terms of IT system point of view?}
 
-    \lipsum[10]
+    In real-time architectures of embedded systems, a web service is not a good choice. As web services use the HTTP protocol \cite{https}, which is based on the TCP \cite{tcp} it also comes with a lot of overhead for each message which is exchanged. A real-time architecture needs high performance. A different protocol might be needed.\\
+    \\
+    Another possible use case is a banking application. Banks have high-security standards, so the HTTPS protocol might not be sufficient for the needs of a bank
     
-  \section{Question 3?}
-  
-    \lipsum[10]
+  \section{In general, there are two types of web services: SOAP-based web service and RESTful web services. What are the differences of these 2 web services?}
+
+
+    SOAP \cite{soap} stands for Simple Object Access Protocol. REST \cite{rest} stands for REpresentational State Transfer. SOAP uses a XML \cite{xml} as its messaging format. REST can use multiple formats. As long as it is a standardized form of serializing data, it can be used with REST. Today commonly JSON \cite{json} is used, tho many web service support additionally XML. Both kinds of web services use the HTTP(S) \cite{https} as their primary transport protocol.\\
+    \\
+    SOAP uses WSDL \cite{wsdl11} to tell a consumer which functions, endpoints, operations, and objects are supported by the web service. WSDL is a type of XML file and is offered by every SOAP-service as a separate endpoint.\\
+    \\
+    REST on the other hand is self-descriptive. It uses different HTTP request methods (such as POST, PUT, DELETE, and GET) to determine the operation which is executed on the web service. Status codes (like 200 OK or 404 NOT FOUND) are used to describe if the web service encountered an error or not. This self-descriptive format of a RESTful web-service makes it easier to learn and is the reason why it is today used more common than the SOAP equivalent.
+
     
   \printbibliography[heading=bibintoc]  
     
